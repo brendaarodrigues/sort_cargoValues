@@ -2,25 +2,19 @@ const maxValue = require("./maxValue");
 const minValue = require("./minValue");
 
 function sortMinMaxValue(array) {
-  let newArr = [... new Set(array)]
+  let newArr = [...new Set(array)];
+
   const maxPosition = maxValue(newArr);
-
-  let aux;
   let count = 0;
+  
 
-  for (let i = maxPosition; i < newArr.length - 1; i++) {
-    aux = newArr[i];
-    newArr[i] = newArr[i + 1];
-    newArr[i + 1] = aux;
+  for (let i = maxPosition; i < (newArr.length - 1) -1; i++) {
     count++;
   }
 
   const minPosition = minValue(newArr);
 
-  for (let i = minPosition; i > 0; i--) {
-    aux = newArr[i];
-    newArr[i] = newArr[i - 1];
-    newArr[i - 1] = aux;
+  for (let j = minPosition; j > 0; j--) {
     count++;
   }
 
