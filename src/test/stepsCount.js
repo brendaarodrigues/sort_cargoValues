@@ -1,4 +1,4 @@
-const stepsCount = [
+const testArray = [
   {
     cargo: [5, 4, 9, 2, 1, 6],
     expected: 6,
@@ -13,4 +13,4 @@ const stepsCount = [
   },
 ];
 
-module.exports = stepsCount;
+module.exports = testArray;
