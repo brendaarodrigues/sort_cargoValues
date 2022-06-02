@@ -1,6 +1,6 @@
 const parse = require("nodemon/lib/cli/parse");
 const myInterface = require("./interface");
-const sortMinMaxValue = require("./sort");
+const stepsCount = require("./stepsCount");
 const validateCargo = require("./validate");
 
 async function cargoTransport() {
@@ -13,10 +13,10 @@ async function cargoTransport() {
   let isValid = validateCargo(cargo);
 
   if (isValid.letter || isValid.zero) {
-    if (isValid.letter) console.log("O peso da carga deve ser escrito em números.");
+    if (isValid.letter)
+      console.log("O peso da carga deve ser escrito em números.");
 
     if (isValid.zero) console.log("O peso de uma carga não pode ser zero.");
-
   } else {
     modifiedCargo = cargo.map((i) => {
       return parseInt(i);
@@ -24,9 +24,11 @@ async function cargoTransport() {
 
     console.log(`\nCarga recebida: ${modifiedCargo}`);
 
-    modifiedCargo = sortMinMaxValue(modifiedCargo);
+    modifiedCargo = stepsCount(modifiedCargo);
 
-    console.log(`Quantidade de passos necessários para a ordenação das cargas: ${modifiedCargo.count} \n`);
+    console.log(
+      `Quantidade de passos necessários para a ordenação das cargas: ${modifiedCargo.count} \n`
+    );
   }
 
   cargoTransport();
