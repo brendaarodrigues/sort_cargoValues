@@ -1,17 +1,29 @@
-module.exports = Array.prototype.sort = function () {
-  let stepsCount = 0;
-  let swap;
+const maxValue = require("./maxValue");
+const minValue = require("./minValue");
 
-  for (let i = 0; i < this.length; i++) {
-    for (let j = 0; j < this.length - 1; j++) {
-      if (this[j] > this[j + 1]) {
-        swap = this[j];
-        this[j] = this[j + 1];
-        this[j + 1] = swap;
-      }
-    }
-    stepsCount++;
+function sortMinMaxValue(array) {
+  const maxPosition = maxValue(array);
+
+  let aux;
+  let count = 0;
+
+  for (let i = maxPosition; i < array.length - 1; i++) {
+    aux = array[i];
+    array[i] = array[i + 1];
+    array[i + 1] = aux;
+    count++;
   }
 
-  return { array: this, count: stepsCount };
-};
+  const minPosition = minValue(array);
+
+  for (let i = minPosition; i > 0; i--) {
+    aux = array[i];
+    array[i] = array[i - 1];
+    array[i - 1] = aux;
+    count++;
+  }
+
+  return { array: array, count: count };
+}
+
+module.exports = sortMinMaxValue;

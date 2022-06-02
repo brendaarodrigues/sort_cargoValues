@@ -5,11 +5,11 @@ const stepsCount = [
   },
   {
     cargo: [10, 1, 2, 6],
-    expected: 4,
+    expected: 3,
   },
   {
     cargo: [8, 12, 1, 6, 3],
-    expected: 5,
+    expected: 4,
   },
 ];
 

@@ -1,6 +1,6 @@
 const parse = require("nodemon/lib/cli/parse");
 const myInterface = require("./interface");
-const sortCargo = require("./sort");
+const sortMinMaxValue = require("./sort");
 const validateCargo = require("./validate");
 
 async function cargoTransport() {
@@ -24,9 +24,8 @@ async function cargoTransport() {
 
     console.log(`\nCarga recebida: ${modifiedCargo}`);
 
-    modifiedCargo = modifiedCargo.sort();
+    modifiedCargo = sortMinMaxValue(modifiedCargo);
 
-    console.log(`Carga ordenada por pesos: ${modifiedCargo.array}`);
     console.log(`Quantidade de passos necessários para a ordenação das cargas: ${modifiedCargo.count} \n`);
   }
 
