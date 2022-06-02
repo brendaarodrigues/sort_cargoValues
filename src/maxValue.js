@@ -1,5 +1,5 @@
 function maxValuePosition (array) {
-  let index = Math.max(...array)
+  index = Math.max(...array)
 
   return array.indexOf(index)
 };
