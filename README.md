@@ -28,7 +28,6 @@ Input:
 
 Output:
 Carga recebida: 5,4,9,2,1,6
-Carga ordenada por pesos: 1,2,4,5,6,9
 Quantidade de passos necessários para a ordenação das cargas: 6
 ```
 
