@@ -4,17 +4,16 @@ const minValue = require("./minValue");
 function stepsCount(array) {
   let newArr = [...new Set(array)];
 
-  const maxPosition = maxValue(newArr);
-  const minPosition = minValue(newArr);
+  let maxPosition = maxValue(newArr);
+  let minPosition = minValue(newArr);
   let count = 0;
 
-  for (let i = maxPosition; i < newArr.length - 1 - 1; i++) {
-    count++;
-  }
+  array.reduce((_previousValue, _currentValue, index) => {
+    if(maxPosition < index) count++
 
-  for (let j = minPosition; j > 0; j--) {
-    count++;
-  }
+    if(minPosition > index) count++
+  })
+
 
   return { array: newArr, count: count };
 }
