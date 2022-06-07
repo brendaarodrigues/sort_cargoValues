@@ -13,10 +13,10 @@ async function cargoTransport() {
   let isValid = validateCargo(cargo);
 
   if (isValid.letter || isValid.zero) {
-    if (isValid.letter)
+    if (isValid.letter) 
       console.log("O peso da carga deve ser escrito em números.");
-
-    if (isValid.zero) console.log("O peso de uma carga não pode ser zero.");
+    if (isValid.zero) 
+      console.log("O peso de uma carga não pode ser zero.");
   } else {
     modifiedCargo = cargo.map((i) => {
       return parseInt(i);

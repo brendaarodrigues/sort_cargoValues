@@ -7,8 +7,5 @@ module.exports = function validateCargo(cargo) {
     if (element == 0) validateZero = true;
   });
 
-  return {
-    letter: validateLetter,
-    zero: validateZero,
-  };
+  return { letter: validateLetter, zero: validateZero };
 };

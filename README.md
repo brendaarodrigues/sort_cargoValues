@@ -22,7 +22,6 @@ Para mover os pesos é permitido fazer somente trocas com pesos adjacentes. Impl
 ## Exemplo
 
 ```bash
-Exemplo:
 Input:
 5,4,9,2,1,6
 
