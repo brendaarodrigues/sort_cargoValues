@@ -7,13 +7,10 @@ function stepsCount(array) {
   let maxPosition = maxValue(newArr);
   let minPosition = minValue(newArr);
   let count = 0;
+  let swapMax = newArr.length - 1 - maxPosition;
+  let swapMin = minPosition;
 
-  array.reduce((_previousValue, _currentValue, index) => {
-    if(maxPosition < index) count++
-
-    if(minPosition > index) count++
-  })
-
+  count = swapMin + swapMax + (minPosition > maxPosition ? -1 : 0);
 
   return { array: newArr, count: count };
 }
